@@ -141,7 +141,7 @@ public class ExpoMarketingCloudSdkModule: Module, ExpoMarketingCloudSdkLoggerDel
 
     AsyncFunction("getTags") { (promise: Promise) in
       SFMCSdk.requestPushSdk { mp in
-        promise.resolve(Array(arrayLiteral: mp.tags()))
+        promise.resolve(Array(mp.tags() ?? []))
       }
     }
 
