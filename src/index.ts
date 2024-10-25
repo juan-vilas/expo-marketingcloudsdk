@@ -123,6 +123,17 @@ export async function trackMessageOpened(messageId: string): Promise<boolean> {
   return await ExpoMarketingCloudSdkModule.trackMessageOpened(messageId);
 }
 
+export async function isAnalyticsEnabled(): Promise<boolean> {
+  return await ExpoMarketingCloudSdkModule.isAnalyticsEnabled();
+}
+
+export async function enableAnalytics(): Promise<boolean> {
+  return await ExpoMarketingCloudSdkModule.enableAnalytics();
+}
+
+export async function disableAnalytics(): Promise<boolean> {
+  return await ExpoMarketingCloudSdkModule.disableAnalytics();
+}
 
 const emitter = new EventEmitter(ExpoMarketingCloudSdkModule ?? NativeModulesProxy.ExpoMarketingCloudSdk);
 

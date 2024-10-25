@@ -140,6 +140,9 @@ Various functions, their parameters, return values, and their specific purposes 
 | `getReadMessageCount` | None | `Promise<number>` | Returns a promise that resolves to a number representing the total number of read inbox messages. |
 | `getReadMessages` | None | `Promise<InboxMessage[]>` | Returns a promise that resolves to an array of `InboxMessage` objects representing the read inbox messages. |
 | `trackMessageOpened` | `messageId`: string | Promise<boolean> | Returns a promise that resolves to true when inbox open event successfully triggered on message. |
+| `isAnalyticsEnabled` | None | Returns a promise that resolves to a boolean indicating whether analytics are enabled for the user. |
+| `enableAnalytics` | None | `Promise<void>` | Returns a promise that resolves when analytics have been successfully enabled. |
+| `disableAnalytics` | None | `Promise<void>` | Returns a promise that resolves when analytics have been successfully disabled. |
 
 
 ## Add event listener
