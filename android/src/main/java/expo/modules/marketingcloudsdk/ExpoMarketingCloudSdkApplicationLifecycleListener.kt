@@ -35,7 +35,7 @@ class ExpoMarketingCloudSdkApplicationLifecycleListener : ApplicationLifecycleLi
     SFMCSdk.configure(application, SFMCSdkModuleConfig.build {
       pushModuleConfig = MarketingCloudConfig.builder().apply {
         setApplicationId(getAppId(application))
-        setMid(getMid(application))
+        if(getMid(application) != "") setMid(getMid(application))
         setAccessToken(getAccessToken(application))
         setAnalyticsEnabled(getAnalyticsEnabled(application))
         setMarketingCloudServerUrl(getServerUrl(application))
