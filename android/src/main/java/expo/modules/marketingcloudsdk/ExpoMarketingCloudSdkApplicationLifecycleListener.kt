@@ -46,6 +46,14 @@ class ExpoMarketingCloudSdkApplicationLifecycleListener : ApplicationLifecycleLi
         setNotificationCustomizationOptions(
                 NotificationCustomizationOptions.create(R.drawable.notification_icon)
         )
+        .setUrlHandler { context, s, s1 ->
+                PendingIntent.getActivity(
+                        context,
+                        Random.nextInt(),
+                        Intent(Intent.ACTION_VIEW, Uri.parse(s)),
+                        PendingIntent.FLAG_UPDATE_CURRENT
+                )
+        }
       }.build(application)
     }) { initStatus ->
       // TODO handle initialization status
